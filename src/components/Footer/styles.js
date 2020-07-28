@@ -1,13 +1,15 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
+
+import colors from '../../configs/colors'
 
 export const Container = styled.footer`
-  visibility: hidden;
+  display: none;
 
-  width: 100%;
-  height: 80px;
-  padding: 20px;
+  background: ${colors.detailBackground};
+
+  padding: 10px;
 
   @media only screen and (max-width: 900px) {
-    visibility: visible;
+    display: block;
   }
-`;
+`

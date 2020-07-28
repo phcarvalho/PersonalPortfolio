@@ -1,45 +1,45 @@
-import React from 'react';
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import { Container, PageContainer, ContentContainer } from './styles';
+import { Container, ContentContainer } from './styles'
+import GlobalStyle from './globalStyle'
 
-import Menu from '../Menu';
-import Footer from '../Footer';
+import Menu from '../Menu'
+import Footer from '../Footer'
 
 function Layout({ children }) {
   const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
-          author,
-          subtitle,
-          facebook,
-          github,
-          linkedIn,
-          twitter,
+          author
+          subtitle
+          facebook
+          github
+          linkedIn
+          twitter
         }
       }
     }
   `)
 
-  const { author, subtitle } = data.site.siteMetadata;
+  const { author, subtitle } = data.site.siteMetadata
 
   return (
-    <Container>
-      <PageContainer>
-        <Menu 
+    <>
+      <GlobalStyle />
+      <Container>
+        <Menu
           data={{
             author,
             subtitle,
           }}
         />
-        <ContentContainer>
-          { children }
-        </ContentContainer>
+        <ContentContainer>{children}</ContentContainer>
         <Footer />
-      </PageContainer>
-    </Container>
-  );
+      </Container>
+    </>
+  )
 }
 
-export default Layout;
+export default Layout

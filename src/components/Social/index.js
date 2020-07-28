@@ -1,28 +1,33 @@
-import React from 'react';
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import { FaFacebookF, FaGithubAlt, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import {
+  FaFacebookF,
+  FaGithubAlt,
+  FaLinkedinIn,
+  FaTwitter,
+} from 'react-icons/fa'
 
-import { Container } from './styles';
+import { Container } from './styles'
 
 function Social() {
-  const iconColor = "#fff";
-  const iconSize = 24;
+  const iconColor = '#333'
+  const iconSize = 20
 
   const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
-          facebook,
-          github,
-          linkedIn,
-          twitter,
+          facebook
+          github
+          linkedIn
+          twitter
         }
       }
     }
   `)
 
-  const { facebook, github, linkedIn, twitter } = data.site.siteMetadata;
+  const { facebook, github, linkedIn, twitter } = data.site.siteMetadata
 
   return (
     <Container>
@@ -47,7 +52,7 @@ function Social() {
         </a>
       )}
     </Container>
-  );
+  )
 }
 
-export default Social;
+export default Social

@@ -1,9 +1,18 @@
-import React from 'react';
+import React from 'react'
 
-// import { Container } from './styles';
+import { Container, Title, List } from './styles'
 
-function ProjectList() {
-  return <div />;
+import ProjectCard from '../ProjectCard'
+
+function ProjectList({ projects }) {
+  return (
+    <Container>
+      <Title>Projects</Title>
+      <List>
+        {projects && projects.map(project => <ProjectCard project={project} />)}
+      </List>
+    </Container>
+  )
 }
 
-export default ProjectList;
+export default ProjectList

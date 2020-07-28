@@ -1,23 +1,17 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
-export const PageContainer = styled.div`
   display: flex;
+  height: 100%;
   flex-direction: row;
+  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
 
   @media only screen and (max-width: 900px) {
-    flex-direction: column; 
+    flex-direction: column;
   }
 `
-
-export const ContentContainer = styled.main`
-  width: 100%;
-  height: 100%;
-  padding: 20px;
+export const ContentContainer = styled.div`
+  flex: 1;
 `
