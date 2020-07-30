@@ -1,5 +1,5 @@
 ---
-title: 'Github Repo Tracker'
+title: 'Portfolio'
 techs: ['NodeJS', 'React', 'Gatsby']
 ---
 
