@@ -9,7 +9,7 @@ export const Container = styled.footer`
 
   padding: 10px;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 750px) {
     display: block;
   }
 `

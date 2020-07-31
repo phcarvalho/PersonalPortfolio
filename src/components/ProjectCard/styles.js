@@ -39,7 +39,7 @@ export const TechList = styled.ul`
   flex: 0.7;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-end;
   flex-flow: row wrap;
   list-style-type: none;
 
@@ -48,11 +48,12 @@ export const TechList = styled.ul`
 `
 
 export const TechItem = styled.li`
-  padding: 5px 7px;
-  border-radius: 15px;
+  padding: 5px;
+  border-radius: 10px;
   background: #16262e;
   font-size: 10px;
   font-weight: bold;
   color: #fff;
-  margin: 3px;
+  margin: 0 3px;
+  margin-top: 3px;
 `

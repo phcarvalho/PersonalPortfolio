@@ -32,22 +32,22 @@ function Social() {
   return (
     <Container>
       {facebook && (
-        <a href={facebook}>
+        <a href={facebook} target="_blank" rel="noopener noreferrer">
           <FaFacebookF color={iconColor} size={iconSize} />
         </a>
       )}
       {github && (
-        <a href={github}>
+        <a href={github} target="_blank" rel="noopener noreferrer">
           <FaGithubAlt color={iconColor} size={iconSize} />
         </a>
       )}
       {linkedIn && (
-        <a href={linkedIn}>
+        <a href={linkedIn} target="_blank" rel="noopener noreferrer">
           <FaLinkedinIn color={iconColor} size={iconSize} />
         </a>
       )}
       {twitter && (
-        <a href={twitter}>
+        <a href={twitter} target="_blank" rel="noopener noreferrer">
           <FaTwitter color={iconColor} size={iconSize} />
         </a>
       )}

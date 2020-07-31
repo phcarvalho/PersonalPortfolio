@@ -1,6 +1,6 @@
 module.exports = {
   background: '#fff',
-  detailBackground: '#9FA2B2',
+  detailBackground: '#CDD6DF',
   main: '#333',
   detail: '#333',
 }

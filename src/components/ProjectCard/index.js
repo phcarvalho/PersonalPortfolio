@@ -11,17 +11,21 @@ import {
 } from './styles'
 
 function ProjectCard({ project }) {
+  console.log(project)
+
   return (
     <Container>
-      <Link to={project.url}>
+      <Link to={project.fields.slug}>
         <ImageContainer>
           <img src={project.imageUrl} />
         </ImageContainer>
         <ContentContainer>
-          <ProjectTitle>{project.title}</ProjectTitle>
+          <ProjectTitle>{project.frontmatter.title}</ProjectTitle>
           <TechList>
-            {project.techs &&
-              project.techs.map(tech => <TechItem>{tech}</TechItem>)}
+            {project.frontmatter.techs &&
+              project.frontmatter.techs.map(tech => (
+                <TechItem>{tech}</TechItem>
+              ))}
           </TechList>
         </ContentContainer>
       </Link>

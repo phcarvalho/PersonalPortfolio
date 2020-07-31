@@ -8,12 +8,22 @@ export const Container = styled.div`
   color: ${colors.main};
   background: ${colors.background};
 
-  border-right: 1px solid #ddd;
+  border: 0;
+  border-right: 3px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      #eee,
+      rgba(0, 0, 0, 0)
+    )
+    1 100%;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 750px) {
     width: 100%;
     background: ${colors.detailBackground};
     color: ${colors.detail};
+    border: 0;
   }
 `
 
@@ -23,7 +33,7 @@ export const TopContainer = styled.div`
   max-width: 450px;
   margin: 0 auto;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 750px) {
     flex-direction: row;
     align-items: center;
   }
@@ -42,7 +52,7 @@ export const ImageContainer = styled.div`
     height: auto;
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 750px) {
     margin: 0;
   }
 `
@@ -50,7 +60,7 @@ export const ImageContainer = styled.div`
 export const TitleContainer = styled.div`
   margin: 0;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 750px) {
     margin-left: 20px;
   }
 `
@@ -60,7 +70,7 @@ export const Title = styled.h1`
   margin: 0;
   margin-top: 30px;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 750px) {
     margin: 0;
   }
 `
@@ -73,11 +83,11 @@ export const SubTitle = styled.h2`
 
 export const ShortBio = styled.p`
   display: block;
-  margin: 30px 0;
+  margin: 40px 0;
   font-size: 14px;
   color: #999;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 750px) {
     display: none;
   }
 `
@@ -93,7 +103,7 @@ export const MenuContainer = styled.ul`
   margin-bottom: 30px;
   padding: 0;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 750px) {
     flex-direction: row;
     margin: 0;
     margin-top: 10px;
@@ -105,13 +115,21 @@ export const MenuItem = styled.li`
   font-size: 18px;
 
   a {
-    text-decoration: none;
+    text-decoration: underline;
     color: #333;
     font-weight: 600;
   }
 
-  @media only screen and (max-width: 900px) {
+  a:hover {
+    color: #777;
+  }
+
+  @media only screen and (max-width: 750px) {
     margin: 0;
+
+    a {
+      text-decoration: none;
+    }
   }
 `
 
@@ -120,9 +138,11 @@ export const SocialContainer = styled.div`
   border-top: 1px solid #eee;
   width: 90%;
   margin: 20px auto;
-  padding: 20px;
+  padding: 0px;
+  padding-top: 20px;
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 750px) {
     display: none;
+    padding: 20px;
   }
 `
