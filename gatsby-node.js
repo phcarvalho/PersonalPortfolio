@@ -24,6 +24,11 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
+            parent {
+              ... on File {
+                name
+              }
+            }
           }
         }
       }
@@ -32,10 +37,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: node.fields.slug,
+      path: `${node.fields.slug}`,
       component: path.resolve('./src/templates/ProjectPage/index.js'),
       context: {
         slug: node.fields.slug,
+        imageFolder: node.parent.name,
       },
     })
   })

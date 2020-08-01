@@ -8,11 +8,12 @@ import ProjectCard from '../ProjectCard'
 function ProjectList() {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: [frontmatter___position] }) {
         edges {
           node {
             id
             frontmatter {
+              position
               techs
               title
             }

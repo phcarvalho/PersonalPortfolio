@@ -2,8 +2,9 @@ module.exports = {
   siteMetadata: {
     title: `Paulo Carvalho's Portfolio`,
     description: ``,
-    author: `@phcarvalhodev`,
+    author: `Paulo Carvalho`,
     subtitle: `Fullstack Developer`,
+    shortbio: `This is a short bio, this is a short bio, this is a short bio, this is a short bio`,
     facebook: `https://www.facebook.com/decarvalho.ph/`,
     twitter: `https://twitter.com/phcarvalhodev`,
     github: `https://github.com/phcarvalho`,

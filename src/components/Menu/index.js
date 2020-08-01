@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import {
   Container,
@@ -16,32 +16,50 @@ import {
 
 import Social from '../Social'
 
+import ProfilePicture from '../../images/profile.png'
+
 function Menu() {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          author
+          subtitle
+          shortbio
+        }
+      }
+    }
+  `)
+
   return (
     <Container>
       <TopContainer>
         <ImageContainer>
-          <img src="https://hollywood-costumes.com/wp-content/uploads/2017/05/halloween_2011-006.jpg" />
+          <Link to="/">
+            <img src={ProfilePicture} alt={data.site.siteMetadata.author} />
+          </Link>
         </ImageContainer>
         <TitleContainer>
-          <Title>Paulo Carvalho</Title>
-          <SubTitle>Fullstack Developer</SubTitle>
+          <Title>{data.site.siteMetadata.author}</Title>
+          <SubTitle>{data.site.siteMetadata.subtitle}</SubTitle>
         </TitleContainer>
       </TopContainer>
-      <ShortBio>
-        This is a short Bio. This is a short Bio. This is a short Bio. This is a
-        short Bio. This is a short Bio. This is a short Bio. This is a short
-        Bio.
-      </ShortBio>
+      <ShortBio>{data.site.siteMetadata.shortbio}</ShortBio>
       <MenuContainer>
         <MenuItem>
-          <Link to="/">Home</Link>
+          <Link to="/" activeStyle={{ color: '#666' }}>
+            Home
+          </Link>
         </MenuItem>
         <MenuItem>
-          <Link to="/about">About Me</Link>
+          <Link to="/about" activeStyle={{ color: '#666' }}>
+            About Me
+          </Link>
         </MenuItem>
         <MenuItem>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact" activeStyle={{ color: '#666' }}>
+            Contact
+          </Link>
         </MenuItem>
       </MenuContainer>
       <SocialContainer>

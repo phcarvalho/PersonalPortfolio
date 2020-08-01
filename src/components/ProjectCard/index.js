@@ -11,10 +11,8 @@ import {
 } from './styles'
 
 function ProjectCard({ project }) {
-  console.log(project)
-
   return (
-    <Container>
+    <Container key={project.fields.slug}>
       <Link to={project.fields.slug}>
         <ImageContainer>
           <img src={project.imageUrl} />
